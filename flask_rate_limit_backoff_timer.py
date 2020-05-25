@@ -9,7 +9,7 @@ def main():
     base_url = 'http://127.0.0.1:5000/'
     backoff_factor = 1
 
-    for _ in range(15):
+    for _ in range(35):
         print(f"Attempt #{_}")
         response = requests.get(base_url)
         while response.status_code == 429:
@@ -20,7 +20,7 @@ def main():
                 time.sleep(1)
             response = requests.get(base_url)
         print(response.text)
-
+        backoff_factor = 1
 
 if __name__ == "__main__":
     main()

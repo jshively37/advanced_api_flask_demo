@@ -9,7 +9,7 @@ def main():
     base_url = 'http://127.0.0.1:5000/'
 
     for _ in range(15):
-        print(f"Attempt #{_}....")
+        print(f"Attempt #{_}")
         response = requests.get(f"{base_url}")
         if response.status_code == 200:
             print(response.text)
